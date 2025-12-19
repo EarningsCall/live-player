@@ -2,6 +2,12 @@
 
 A React application demonstrating how to integrate with live earnings call streaming using HLS (HTTP Live Streaming) protocol. This app fetches live earnings events from an API and allows users to select and stream earnings calls in real-time.
 
+## 🚀 Live Demo
+
+**[View Live Demo →](https://earningscall.github.io/live-player/)**
+
+Try the live application to see HLS streaming in action with real earnings call events.
+
 ## Features
 
 - **Live Event Discovery**: Fetches current earnings calls from the EarningsCall API
