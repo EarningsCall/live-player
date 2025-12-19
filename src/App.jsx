@@ -12,7 +12,7 @@ function App() {
   return (
     <div style={styles.app}>
       <header style={styles.header}>
-        <h1 style={styles.mainTitle}>Live Earnings Stream Player</h1>
+        <h1 style={styles.mainTitle}>EarningsCall: Live Stream Player Demo</h1>
         <p style={styles.description}>
           Watch live earnings calls in real-time. Select an event below to start streaming.
         </p>
