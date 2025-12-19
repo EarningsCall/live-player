@@ -270,9 +270,7 @@ export default function StreamPlayer({ event, streamUrl }) {
 
 const styles = {
   container: {
-    maxWidth: '1200px',
-    margin: '0 auto',
-    padding: '2rem',
+    marginTop: '2rem',
   },
   header: {
     display: 'flex',
@@ -283,35 +281,40 @@ const styles = {
     gap: '1rem',
   },
   title: {
-    fontSize: '2rem',
-    fontWeight: 'bold',
+    fontSize: '1.75rem',
+    fontWeight: '700',
     color: '#f1f5f9',
+    letterSpacing: '-0.0125em',
   },
   subtitle: {
-    fontSize: '1rem',
+    fontSize: '0.9375rem',
     color: '#94a3b8',
-    marginTop: '0.5rem',
+    marginTop: '0.375rem',
   },
   emptyState: {
     textAlign: 'center',
-    padding: '4rem 2rem',
-    backgroundColor: '#1e293b',
+    padding: '3.5rem 2rem',
+    backgroundColor: 'rgba(30, 41, 59, 0.5)',
     borderRadius: '0.75rem',
+    border: '2px dashed rgba(100, 116, 139, 0.3)',
   },
   emptyIcon: {
     display: 'flex',
     justifyContent: 'center',
-    marginBottom: '1.5rem',
+    marginBottom: '1.25rem',
+    opacity: 0.5,
   },
   emptyTitle: {
-    fontSize: '1.5rem',
+    fontSize: '1.25rem',
     fontWeight: '600',
     color: '#cbd5e1',
-    marginBottom: '0.75rem',
+    marginBottom: '0.5rem',
   },
   emptyText: {
-    fontSize: '1rem',
+    fontSize: '0.9375rem',
     color: '#64748b',
+    maxWidth: '400px',
+    margin: '0 auto',
   },
   statusContainer: {
     display: 'flex',

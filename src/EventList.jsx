@@ -102,6 +102,8 @@ export default function EventList({ onSelectEvent, selectedEvent }) {
             return (
               <div
                 key={`${event.symbol}-${event.eventDate}-${index}`}
+                data-event-card="true"
+                data-selected={isSelected}
                 style={{
                   ...styles.eventCard,
                   ...(isSelected ? styles.eventCardSelected : {})
@@ -173,9 +175,10 @@ const styles = {
     gap: '1rem',
   },
   title: {
-    fontSize: '1.5rem',
-    fontWeight: 'bold',
+    fontSize: '1.375rem',
+    fontWeight: '700',
     color: '#f1f5f9',
+    letterSpacing: '-0.0125em',
   },
   headerInfo: {
     display: 'flex',
@@ -262,21 +265,23 @@ const styles = {
   },
   eventGrid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
-    gap: '1.25rem',
+    gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
+    gap: '1rem',
   },
   eventCard: {
-    padding: '1.5rem',
+    padding: '1.25rem 1.5rem',
     backgroundColor: '#1e293b',
     borderRadius: '0.75rem',
     cursor: 'pointer',
-    transition: 'all 0.2s',
-    border: '2px solid transparent',
+    transition: 'all 0.15s ease-in-out',
+    border: '2px solid rgba(100, 116, 139, 0.2)',
+    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.3)',
   },
   eventCardSelected: {
     backgroundColor: '#1e3a5f',
     borderColor: '#3b82f6',
-    boxShadow: '0 0 0 1px rgba(59, 130, 246, 0.3)',
+    boxShadow: '0 0 0 3px rgba(59, 130, 246, 0.15), 0 4px 12px rgba(0, 0, 0, 0.4)',
+    transform: 'translateY(-2px)',
   },
   eventHeader: {
     display: 'flex',
@@ -382,8 +387,9 @@ styleSheet.textContent = `
     50% { opacity: 0.5; }
   }
 
-  button:hover {
+  button:hover:not(:disabled) {
     opacity: 0.9;
+    background-color: #475569;
   }
 
   button:disabled {
@@ -391,9 +397,14 @@ styleSheet.textContent = `
     cursor: not-allowed;
   }
 
-  .eventCard:hover {
+  [data-event-card]:hover:not([data-selected="true"]) {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    border-color: rgba(148, 163, 184, 0.4);
+  }
+
+  [data-event-card][data-selected="true"]:hover {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2), 0 6px 16px rgba(0, 0, 0, 0.5);
   }
 `
 document.head.appendChild(styleSheet)

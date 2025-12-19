@@ -12,6 +12,7 @@ function App() {
   return (
     <div style={styles.app}>
       <header style={styles.header}>
+        <img src={`${import.meta.env.BASE_URL}logo.png`} alt="EarningsCall" style={styles.logo} />
         <h1 style={styles.mainTitle}>EarningsCall: Live Stream Player Demo</h1>
         <p style={styles.description}>
           Watch live earnings calls in real-time. Select an event below to start streaming.
@@ -50,34 +51,45 @@ function App() {
 
 const styles = {
   app: {
-    maxWidth: '1200px',
+    maxWidth: '1400px',
     margin: '0 auto',
-    padding: '2rem',
+    padding: '1.5rem',
+    minHeight: '100vh',
   },
   header: {
     textAlign: 'center',
-    marginBottom: '3rem',
+    marginBottom: '2.5rem',
+    paddingBottom: '2rem',
+    borderBottom: '1px solid rgba(148, 163, 184, 0.1)',
+  },
+  logo: {
+    height: '60px',
+    marginBottom: '1rem',
+    objectFit: 'contain',
   },
   mainTitle: {
-    fontSize: '2.5rem',
-    fontWeight: 'bold',
+    fontSize: '2rem',
+    fontWeight: '700',
     color: '#f1f5f9',
-    marginBottom: '0.75rem',
+    marginBottom: '0.5rem',
+    letterSpacing: '-0.025em',
   },
   description: {
-    fontSize: '1.125rem',
+    fontSize: '1rem',
     color: '#94a3b8',
-    marginBottom: '1.5rem',
+    marginBottom: '1.25rem',
+    maxWidth: '600px',
+    margin: '0 auto 1.25rem',
   },
   demoNotice: {
     display: 'flex',
     alignItems: 'flex-start',
-    gap: '0.75rem',
-    maxWidth: '600px',
+    gap: '0.625rem',
+    maxWidth: '550px',
     margin: '0 auto',
-    padding: '1rem 1.25rem',
-    backgroundColor: 'rgba(59, 130, 246, 0.1)',
-    border: '1px solid rgba(59, 130, 246, 0.3)',
+    padding: '0.875rem 1rem',
+    backgroundColor: 'rgba(59, 130, 246, 0.08)',
+    border: '1px solid rgba(59, 130, 246, 0.2)',
     borderRadius: '0.5rem',
     textAlign: 'left',
   },
@@ -90,14 +102,14 @@ const styles = {
   },
   demoNoticeTitle: {
     display: 'block',
-    fontSize: '0.875rem',
-    fontWeight: '700',
+    fontSize: '0.8125rem',
+    fontWeight: '600',
     color: '#60a5fa',
     marginBottom: '0.25rem',
   },
   demoNoticeText: {
-    fontSize: '0.875rem',
-    color: '#cbd5e1',
+    fontSize: '0.8125rem',
+    color: '#94a3b8',
     lineHeight: '1.5',
     margin: 0,
   },
